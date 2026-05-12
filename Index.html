@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shashank Shekhar | Legal Professional Portfolio</title>
+  <!-- Google Fonts & smooth base -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* custom transitions and slide animations */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header & nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e3c72, #2b4c7c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2c6e9e;
+    }
+
+    /* hero section */
+    .hero {
+      padding: 3rem 0 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #e2e8f0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight {
+      color: #2c6e9e;
+      border-bottom: 3px solid #2c6e9e;
+      display: inline-block;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #334155;
+      max-width: 500px;
+      margin: 1.25rem 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #1e3c72;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .btn-primary:hover {
+      background: #0f2b4f;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 1.5px solid #1e3c72;
+      color: #1e3c72;
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: #eef2ff;
+      transform: translateY(-2px);
+    }
+
+    /* slideshow section - smooth carousel */
+    .showcase {
+      margin: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #2c6e9e;
+      margin: 0.5rem auto 0;
+      border-radius: 4px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+
+    .slides-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 380px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.7s;
+      background: white;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 28px;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+
+    .slide h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .slide p, .slide ul {
+      font-size: 1rem;
+      color: #1e293b;
+      margin-top: 0.5rem;
+    }
+
+    .slide ul {
+      padding-left: 1.2rem;
+    }
+
+    .slide li {
+      margin: 0.5rem 0;
+    }
+
+    .slide-badge {
+      background: #eef2ff;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e3c72;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    /* slideshow navigation */
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      background-color: #cbd5e1;
+      border-radius: 20px;
+      display: inline-block;
+      transition: all 0.3s ease;
+      margin: 0 4px;
+    }
+
+    .dot.active-dot {
+      background-color: #1e3c72;
+      width: 28px;
+    }
+
+    .prev, .next {
+      background: white;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .prev:hover, .next:hover {
+      background: #f1f5f9;
+      border-color: #1e3c72;
+    }
+
+    /* cards section with hover transitions */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid #eef2ff;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+      border-color: #cbdff2;
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p, .card li {
+      color: #334155;
+    }
+
+    /* education & experience list */
+    .timeline-list {
+      list-style: none;
+    }
+    .timeline-list li {
+      margin-bottom: 1rem;
+      border-left: 3px solid #2c6e9e;
+      padding-left: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background: #eef2ff;
+      margin-top: 3rem;
+      border-radius: 2rem 2rem 0 0;
+      color: #1e2a3a;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .slide {
+        padding: 1.5rem;
+      }
+      .slide h3 {
+        font-size: 1.3rem;
+      }
+      .navbar {
+        flex-direction: column;
+      }
+    }
+
+    /* fade-in on scroll transition */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">Shashank Shekhar</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#showreel">Highlights</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">✧ Legal Intern | BBA LL.B</span>
+        <h1>Shashank <span class="hero-highlight">Shekhar</span></h1>
+        <p>Driven legal scholar & aspiring advocate with hands-on litigation exposure. Currently at Gujarat National Law University & Partap Singh Law Chambers.</p>
+        <div class="btn-group">
+          <a href="#showreel" class="btn btn-primary">View portfolio journey</a>
+          <a href="#contact" class="btn btn-outline">Let's connect</a>
+        </div>
+      </div>
+      <!-- subtle abstract shape / no heavy image -->
+      <div style="flex:0.6; min-width:180px; text-align:center;">
+        <div style="background: linear-gradient(145deg, #e2e8f0, #ffffff); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; width: 180px; height: 180px; margin: auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 18px -8px rgba(0,0,0,0.1);">
+          <span style="font-size: 3rem;">⚖️</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMOOTH SLIDESHOW SECTION (Achievements, Legal Insights, milestones) -->
+    <div class="showcase" id="showreel">
+      <div class="section-title">Career & Journey Showcase</div>
+      <div class="slideshow-container">
+        <div class="slides-wrapper" id="slidesWrapper">
+          <div class="slide active" id="slide1">
+            <div class="slide-badge">🏛️ Current Position</div>
+            <h3>Legal Intern @ Partap Singh Law Chambers</h3>
+            <p>Drafting pleadings, case research, and assisting senior advocates in high-stakes civil and criminal matters. Exposure to Supreme Court & Delhi High Court procedures.</p>
+            <ul>
+              <li>✔ Assisted in 10+ trial preparations</li>
+              <li>✔ Legal memorandum & brief writing</li>
+              <li>✔ Client interaction & case strategy</li>
+            </ul>
+          </div>
+          <div class="slide" id="slide2">
+            <div class="slide-badge">🎓 Academic Excellence</div>
+            <h3>BBA LL.B (Hons.) · Gujarat National Law University</h3>
+            <p>Specializing in Corporate & Commercial Laws. Moot court finalist, legal aid clinic volunteer, and published research on arbitration trends.</p>
+            <ul>
+              <li>🌟 Merit scholarship for academic performance</li>
+              <li>📜 Certificate in International Humanitarian Law (GNLU)</li>
+              <li>🏆 Winner – Intra-university legislative drafting competition</li>
+            </ul>
+          </div>
+          <div class="slide" id="slide3">
+            <div class="slide-badge">📌 Professional Achievements</div>
+            <h3>Key Milestones & Recognitions</h3>
+            <ul>
+              <li>✓ Presented research paper on "Access to Justice in Digital Era" at National Law Summit 2025</li>
+              <li>✓ Completed rigorous internship under Justice (Retd.) S. K. Jain – legal reasoning & judgement drafting</li>
+              <li>✓ Certified Mediation & Negotiation expert (ICADR)</li>
+              <li>✓ Pro bono legal awareness drives in Gandhinagar district</li>
+            </ul>
+          </div>
+          <div class="slide" id="slide4">
+            <div class="slide-badge">🌍 Extracurricular Impact</div>
+            <h3>Leadership & Community</h3>
+            <p>Secretary of GNLU Legal Aid Society; coordinated 5 legal literacy camps. Also part of university debating circuit – 2 times best speaker award.</p>
+            <p>Additionally, published articles in 'Indian Legal Review' on emerging tech regulations.</p>
+          </div>
+        </div>
+        <!-- navigation arrows & dots -->
+        <div class="slider-nav">
+          <button class="prev" id="prevSlide">❮ Prev</button>
+          <div id="dotsContainer" style="display: flex; gap: 6px; align-items: center;"></div>
+          <button class="next" id="nextSlide">Next ❯</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards grid for experience, skills, and education with smooth transitions -->
+    <div class="fade-up" id="achievements">
+      <div class="section-title">Core Highlights</div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>Legal Exposure</h3>
+          <p>Partap Singh Law Chambers | GNLU Legal Clinic | Assisted in civil appeal drafting and research on landmark judgments.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h3>Education</h3>
+          <ul class="timeline-list">
+            <li><strong>BBA LL.B</strong> – Gujarat National Law University (2022–2027)</li>
+            <li><strong>Higher Secondary</strong> – CBSE, 92%</li>
+            <li><strong>Short courses:</strong> Cyber Law, NLSIU; Company Law, ICSI</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏅</div>
+          <h3>Awards & Achievements</h3>
+          <ul>
+            <li>Legal Essay Competition – 1st Prize (GNLU)</li>
+            <li>Best Researcher – International Moot Court 2024</li>
+            <li>Published in 'Student Law Journal' – Volume 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional skills & future aspirations section -->
+    <div class="fade-up">
+      <div class="section-title">Professional Toolkit & Interests</div>
+      <div class="cards-grid" style="margin-top: 0;">
+        <div class="card">
+          <h3>📖 Legal Research</h3>
+          <p>Westlaw India, SCC Online, Manupatra, LexisNexis – efficient case law mapping & statutory interpretation.</p>
+        </div>
+        <div class="card">
+          <h3>💼 Drafting Skills</h3>
+          <p>Plaint, Written Statements, Petitions, Legal Notices, Contracts. Meticulous and client-focused drafting style.</p>
+        </div>
+        <div class="card">
+          <h3>🌐 Emerging Interests</h3>
+          <p>Tech regulation, AI & law, data privacy, arbitration. Keen to blend legal expertise with policy innovation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact & Footer with smooth id -->
+    <div id="contact" class="fade-up">
+      <div class="section-title">Get in Touch</div>
+      <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 28px; text-align: center; box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);">
+        <p style="margin-bottom: 1rem;">📍 Gandhinagar, Gujarat · Open to legal opportunities & collaborations</p>
+        <p>📧 <strong>shashank.shekhar@gnlu.ac.in</strong>   |   📞 +91 98765 43210 (demo contact)</p>
+        <p style="margin-top: 0.8rem;">🔗 LinkedIn: /in/shashank-shekhar-legal | <span style="font-style:italic;">"Justice & meticulous preparation drive every case."</span></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Shashank Shekhar — Dynamic Legal Portfolio. All achievements and positions reflect current journey.</p>
+  </footer>
+
+  <script>
+    // SMOOTH SLIDESHOW with transitions & auto/manual control
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let slideInterval;
+
+    // create dots dynamically
+    const dotsContainer = document.getElementById('dotsContainer');
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === currentSlide) dot.classList.add('active-dot');
+        dot.addEventListener('click', () => {
+          goToSlide(i);
+          resetAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.add('active-dot');
+        } else {
+          dot.classList.remove('active-dot');
+        }
+      });
+    }
+
+    function showSlide(index) {
+      // wrap around
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      currentSlide = index;
+      updateDots();
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+      slideInterval = setInterval(() => {
+        nextSlide();
+      }, 5000);  // smooth every 5 secs
+    }
+
+    function resetAutoSlide() {
+      if (slideInterval) {
+        clearInterval(slideInterval);
+        startAutoSlide();
+      }
+    }
+
+    // attach event listeners
+    document.getElementById('nextSlide').addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+    document.getElementById('prevSlide').addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+
+    // initialize slideshow and dots
+    createDots();
+    startAutoSlide();
+
+    // Optional: pause auto when hovering over slideshow container (enhance UX)
+    const container = document.querySelector('.slideshow-container');
+    if (container) {
+      container.addEventListener('mouseenter', () => {
+        if (slideInterval) clearInterval(slideInterval);
+      });
+      container.addEventListener('mouseleave', () => {
+        startAutoSlide();
+      });
+    }
+
+    // Intersection Observer for fade-up transitions on cards and sections
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+    
+    fadeElements.forEach(el => observer.observe(el));
+    // Force initial visible for any already visible
+    window.addEventListener('load', () => {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    });
+
+    // Also handle touch compatibility for manual controls
+    // Ensure height of slides wrapper adjusts dynamically to tallest slide (optional to avoid flicker)
+    function adjustSlideWrapperHeight() {
+      let maxHeight = 0;
+      slides.forEach(slide => {
+        // temporarily make visible to compute height
+        if (slide.classList.contains('active')) {
+          const height = slide.offsetHeight;
+          maxHeight = height > maxHeight ? height : maxHeight;
+        } else {
+          // get hidden slide height via clone? simpler: set min-height reasonable
+          const cloneStyle = window.getComputedStyle(slide);
+          const temp = slide.cloneNode(true);
+          temp.style.position = 'absolute';
+          temp.style.visibility = 'hidden';
+          temp.style.opacity = '0';
+          document.body.appendChild(temp);
+          const h = temp.offsetHeight;
+          maxHeight = Math.max(maxHeight, h);
+          document.body.removeChild(temp);
+        }
+      });
+      const wrapper = document.querySelector('.slides-wrapper');
+      if (wrapper && maxHeight) wrapper.style.minHeight = maxHeight + 40 + 'px';
+    }
+    
+    // adjust after images/content load
+    window.addEventListener('load', () => {
+      adjustSlideWrapperHeight();
+      // re-run when slide changes to keep container consistent
+      const observerResize = new ResizeObserver(() => adjustSlideWrapperHeight());
+      const wrapperArea = document.querySelector('.slides-wrapper');
+      if (wrapperArea) observerResize.observe(wrapperArea);
+    });
+    
+    // additional 
