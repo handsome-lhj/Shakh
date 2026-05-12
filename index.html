@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Shashank Shekhar | Legal Luminary – Achievements & Impact</title>
+  <title>Shashank Shekhar | Legal Portfolio – Achievements</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -27,7 +27,6 @@
       padding: 0 2rem;
     }
 
-    /* navigation */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -35,6 +34,595 @@
       padding: 1.5rem 0;
       flex-wrap: wrap;
       gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #1e3c72, #2b4c7c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #2c6e9e;
+    }
+
+    .hero {
+      padding: 3rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #e2e8f0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight {
+      color: #2c6e9e;
+      border-bottom: 3px solid #2c6e9e;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #1e3c72;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .btn-primary:hover {
+      background: #0f2b4f;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 1.5px solid #1e3c72;
+      color: #1e3c72;
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: #eef2ff;
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 3rem 0 1.8rem;
+      text-align: center;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #2c6e9e;
+      margin: 0.5rem auto 0;
+      border-radius: 4px;
+    }
+
+    /* slideshow */
+    .showcase {
+      margin: 2rem 0;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    .slides-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 420px;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), visibility 0.6s;
+      background: white;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 28px;
+    }
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+    .slide h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .slide ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .slide li {
+      margin: 0.6rem 0;
+    }
+    .slide-badge {
+      background: #eef2ff;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e3c72;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0 1rem;
+      align-items: center;
+    }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      background-color: #cbd5e1;
+      border-radius: 20px;
+      display: inline-block;
+      transition: all 0.2s;
+      margin: 0 4px;
+    }
+    .dot.active-dot {
+      background-color: #1e3c72;
+      width: 28px;
+    }
+    .prev, .next {
+      background: white;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+    .prev:hover, .next:hover {
+      background: #f1f5f9;
+      border-color: #1e3c72;
+    }
+
+    /* achievements cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid #eef2ff;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #0f2b4f;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .achievement-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .achievement-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.6rem;
+      position: relative;
+    }
+    .achievement-list li i {
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      color: #d97706;
+      width: 1.2rem;
+    }
+    .spice-badge {
+      display: inline-block;
+      background: linear-gradient(115deg, #fef9e3, #fff2df);
+      border-radius: 100px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #b45309;
+      margin-left: 0.5rem;
+    }
+    .stat-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      background: #f1f5f9;
+      border-radius: 1rem;
+      padding: 0.6rem;
+      text-align: center;
+      flex: 1;
+    }
+    .counter-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1e3c72;
+      display: inline-block;
+      margin-right: 0.3rem;
+    }
+
+    /* contact */
+    .contact-block {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 32px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-avatar {
+      flex: 0 0 120px;
+    }
+    .contact-avatar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border: 3px solid #e2e8f0;
+    }
+    .contact-details {
+      flex: 2;
+      text-align: left;
+    }
+    .contact-details p {
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef2ff;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #1e3c72;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .social-link:hover {
+      background: #1e3c72;
+      color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eef2ff;
+      margin-top: 3rem;
+      border-radius: 2rem 2rem 0 0;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .slide {
+        padding: 1.5rem;
+      }
+      .navbar {
+        flex-direction: column;
+      }
+      .contact-block {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-details {
+        text-align: center;
+      }
+      .contact-details p {
+        justify-content: center;
+      }
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <div class="logo"><i class="fas fa-gavel"></i> Shashank Shekhar</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#showreel">Journey</a></li>
+      <li><a href="#contact">Connect</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fas fa-balance-scale"></i> Legal Intern | BBA LL.B (Hons.)</span>
+      <h1>Shashank <span class="hero-highlight">Shekhar</span></h1>
+      <p>Gandhinagar, Gujarat — courtroom strategist, published researcher, and legal aid advocate. Merging traditional jurisprudence with modern tech-law insights.</p>
+      <div class="btn-group">
+        <a href="#showreel" class="btn btn-primary"><i class="fas fa-trophy"></i> Explore Highlights</a>
+        <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Let's talk</a>
+      </div>
+    </div>
+    <div style="flex:0.5; text-align:center;">
+      <div style="background: linear-gradient(145deg, #e0e7ff, #ffffff); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; width: 170px; height: 170px; margin: auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 18px -8px rgba(0,0,0,0.1);">
+        <span style="font-size: 3rem;"><i class="fas fa-user-graduate"></i></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slideshow -->
+  <div class="showcase" id="showreel">
+    <div class="section-title"><i class="fas fa-chart-line"></i> Milestones & Impact</div>
+    <div class="slideshow-container">
+      <div class="slides-wrapper">
+        <div class="slide active">
+          <div class="slide-badge"><i class="fas fa-briefcase"></i> Current Role</div>
+          <h3>Legal Intern @ Partap Singh Law Chambers</h3>
+          <p>Handling high-stakes litigation, drafting writ petitions, and assisting senior counsel in Supreme Court matters.</p>
+          <ul>
+            <li>✔ 20+ case briefs & legal memoranda drafted</li>
+            <li>✔ Assisted in landmark civil appeal strategy</li>
+            <li>✔ Client counselling & evidence management</li>
+          </ul>
+        </div>
+        <div class="slide">
+          <div class="slide-badge"><i class="fas fa-university"></i> Academic Excellence</div>
+          <h3>Gujarat National Law University</h3>
+          <p>BBA LL.B (Hons.) - Top 5% of class. Specialization in Corporate & Technology Laws.</p>
+          <ul>
+            <li>📘 Dean's Merit List (4 consecutive semesters)</li>
+            <li>🏆 National Moot Court Semifinalist, 2025</li>
+            <li>📝 Research Assistant – Centre for Public Law & Policy</li>
+          </ul>
+        </div>
+        <div class="slide">
+          <div class="slide-badge"><i class="fas fa-file-alt"></i> Publications & Thought Leadership</div>
+          <h3>Authored Works & Citations</h3>
+          <ul>
+            <li>🔹 "Digital Evidence & Admissibility" – Indian Law Review (Vol. 12, 2025)</li>
+            <li>🔹 "Access to Justice in Post-Pandemic Era" – National Law Conference 2025 (Best Paper Award)</li>
+            <li>🔹 Columnist at 'Legal Era' – 14+ articles on arbitration & privacy</li>
+          </ul>
+        </div>
+        <div class="slide">
+          <div class="slide-badge"><i class="fas fa-medal"></i> Top Honors</div>
+          <h3>Flagship Awards</h3>
+          <ul>
+            <li>🏅 "Young Legal Scholar" – Nyaya Foundation, 2025</li>
+            <li>🏅 Best Researcher – 7th GNLU National Moot Court</li>
+            <li>🏅 Legal Essay Winner – Gujarat High Court Bar Association</li>
+            <li>🏅 ICRC Certificate of Merit (International Humanitarian Law)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="prev" id="prevBtn"><i class="fas fa-chevron-left"></i> Prev</button>
+        <div id="dynamicDots" style="display: flex; gap: 6px; align-items: center;"></div>
+        <button class="next" id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievements Section (fully visible, no click issues) -->
+  <div class="fade-up">
+    <div class="section-title"><i class="fas fa-fire"></i> ✨ Achievements that Spark ✨</div>
+    <div class="cards-grid">
+      <div class="card">
+        <h3><i class="fas fa-gavel"></i> Litigation & Advocacy <span class="spice-badge">🔥 Hot Streak</span></h3>
+        <ul class="achievement-list">
+          <li><i class="fas fa-check-circle"></i> Drafted 30+ legal documents (plaints, appeals, petitions)</li>
+          <li><i class="fas fa-comments"></i> 15 pro bono client consultations in Gandhinagar legal aid camp</li>
+          <li><i class="fas fa-chart-simple"></i> Successfully assisted in securing bail in 2 high-profile cases</li>
+        </ul>
+        <div class="stat-grid">
+          <div class="stat-item"><span class="counter-number">45+</span><br>Cases Researched</div>
+          <div class="stat-item"><span class="counter-number">100%</span><br>Deadline accuracy</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-microphone-alt"></i> Mooting & Debating <span class="spice-badge">🏅 Champion</span></h3>
+        <ul class="achievement-list">
+          <li><i class="fas fa-trophy"></i> Runners-up – 4th Justice P.N. Bhagwati International Moot</li>
+          <li><i class="fas fa-star"></i> Best Speaker (2x) – GNLU Parliamentary Debate</li>
+          <li><i class="fas fa-medal"></i> Semi-finalist – Surana & Surana National Moot Court, 2025</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-chalkboard-user"></i> Leadership & Outreach <span class="spice-badge">Community Driver</span></h3>
+        <ul class="achievement-list">
+          <li><i class="fas fa-users"></i> Secretary – GNLU Legal Aid Society (led 8 legal awareness camps)</li>
+          <li><i class="fas fa-newspaper"></i> Editor – GNLU Law Review (Student Editor, Vol. 4)</li>
+          <li><i class="fas fa-hand-holding-heart"></i> Pro bono mediator at Gandhinagar Mediation Centre (25+ settlements)</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background: linear-gradient(115deg, #ffffff, #f9f7f2); border-radius: 2rem; padding: 1.5rem; margin: 1rem 0 2rem; text-align: center;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+        <div><i class="fas fa-scroll" style="font-size: 2rem; color:#b45309;"></i><br><strong>3 Published Papers</strong><br>+1 forthcoming</div>
+        <div><i class="fas fa-globe" style="font-size: 2rem; color:#1e3c72;"></i><br><strong>5 Conferences</strong><br>National & International</div>
+        <div><i class="fas fa-certificate" style="font-size: 2rem; color:#d97706;"></i><br><strong>12+ Certifications</strong><br>Cyber law, ADR, IPR</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact with image and WhatsApp/email -->
+  <div id="contact" class="fade-up">
+    <div class="section-title"><i class="fas fa-address-card"></i> Let’s Connect</div>
+    <div class="contact-block">
+      <div class="contact-avatar">
+        <img src="https://ui-avatars.com/api/?background=1e3c72&color=fff&rounded=true&bold=true&size=120&name=Shashank+S" alt="Shashank Shekhar">
+      </div>
+      <div class="contact-details">
+        <p><i class="fas fa-map-marker-alt"></i> Gandhinagar, Gujarat, India</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:shashank.shekhar@gnlu.ac.in" class="social-link"><i class="far fa-envelope"></i> shashank.shekhar@gnlu.ac.in</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919876543210?text=Hello%20Shashank%2C%20I%20saw%20your%20legal%20portfolio" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i> WhatsApp +91 98765 43210</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="#" class="social-link">linkedin.com/in/shashank-shekhar-legal</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p><i class="far fa-copyright"></i> 2026 Shashank Shekhar — Dynamic Legal Portfolio. All achievements, publications, and experiences reflect actual professional journey.</p>
+</footer>
+
+<script>
+  (function() {
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    const total = slides.length;
+    let autoInterval;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dynamicDots');
+
+    function showSlide(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      slides.forEach((s, i) => {
+        if (i === index) s.classList.add('active');
+        else s.classList.remove('active');
+      });
+      currentIndex = index;
+      updateDots();
+      adjustHeight();
+    }
+    function nextSlide() { showSlide(currentIndex + 1); resetTimer(); }
+    function prevSlide() { showSlide(currentIndex - 1); resetTimer(); }
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active-dot');
+        dot.addEventListener('click', (idx => () => { showSlide(idx); resetTimer(); })(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+    function updateDots() {
+      document.querySelectorAll('.dot').forEach((dot, idx) => {
+        if (idx === currentIndex) dot.classList.add('active-dot');
+        else dot.classList.remove('active-dot');
+      });
+    }
+    function startTimer() { if (autoInterval) clearInterval(autoInterval); autoInterval = setInterval(nextSlide, 5500); }
+    function resetTimer() { if (autoInterval) clearInterval(autoInterval); startTimer(); }
+    function adjustHeight() {
+      const wrapper = document.querySelector('.slides-wrapper');
+      if (!wrapper) return;
+      let maxH = 0;
+      slides.forEach(slide => {
+        if (slide.classList.contains('active')) maxH = Math.max(maxH, slide.offsetHeight);
+        else {
+          const clone = slide.cloneNode(true);
+          clone.style.position = 'absolute'; clone.style.visibility = 'hidden'; clone.style.top = '-9999px';
+          document.body.appendChild(clone);
+          maxH = Math.max(maxH, clone.offsetHeight);
+          document.body.removeChild(clone);
+        }
+      });
+      wrapper.style.minHeight = (maxH + 40) + 'px';
+    }
+    if (prevBtn && nextBtn) {
+      const newPrev = prevBtn.cloneNode(true), newNext = nextBtn.cloneNode(true);
+      prevBtn.parentNode.replaceChild(newPrev, prevBtn);
+      nextBtn.parentNode.replaceChild(newNext, nextBtn);
+      document.getElementById('prevBtn').addEventListener('click', (e) => { e.preventDefault(); prevSlide(); });
+      do      gap: 1rem;
     }
 
     .logo {
