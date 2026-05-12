@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Shashank Shekhar | Legal Professional Portfolio</title>
-  <!-- Google Fonts & smooth base -->
+  <title>Shashank Shekhar | Legal Portfolio – Achievements & Journey</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -21,20 +20,630 @@
       scroll-behavior: smooth;
     }
 
-    /* custom transitions and slide animations */
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* header & nav */
+    /* navigation */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 0;
       flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #1e3c72, #2b4c7c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #2c6e9e;
+    }
+
+    /* hero */
+    .hero {
+      padding: 3rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #e2e8f0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight {
+      color: #2c6e9e;
+      border-bottom: 3px solid #2c6e9e;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #1e3c72;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .btn-primary:hover {
+      background: #0f2b4f;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 1.5px solid #1e3c72;
+      color: #1e3c72;
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: #eef2ff;
+      transform: translateY(-2px);
+    }
+
+    /* section styling */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 3rem 0 1.8rem;
+      text-align: center;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #2c6e9e;
+      margin: 0.5rem auto 0;
+      border-radius: 4px;
+    }
+
+    /* slideshow container - FIXED buttons */
+    .showcase {
+      margin: 2rem 0;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    .slides-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 420px;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), visibility 0.6s;
+      background: white;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 28px;
+    }
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+    .slide h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .slide p, .slide ul {
+      font-size: 1rem;
+      color: #1e293b;
+    }
+    .slide ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .slide li {
+      margin: 0.6rem 0;
+    }
+    .slide-badge {
+      background: #eef2ff;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e3c72;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0 1rem;
+      align-items: center;
+    }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      background-color: #cbd5e1;
+      border-radius: 20px;
+      display: inline-block;
+      transition: all 0.2s;
+      margin: 0 4px;
+    }
+    .dot.active-dot {
+      background-color: #1e3c72;
+      width: 28px;
+    }
+    .prev, .next {
+      background: white;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+    .prev:hover, .next:hover {
+      background: #f1f5f9;
+      border-color: #1e3c72;
+    }
+
+    /* cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid #eef2ff;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #0f2b4f;
+    }
+    .achievement-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .achievement-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    .achievement-list li::before {
+      content: "🏅";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .contact-block {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eef2ff;
+      margin-top: 3rem;
+      border-radius: 2rem 2rem 0 0;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .slide {
+        padding: 1.5rem;
+      }
+      .slide h3 {
+        font-size: 1.3rem;
+      }
+      .navbar {
+        flex-direction: column;
+      }
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <div class="logo">⚖️ Shashank Shekhar</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#showreel">Journey</a></li>
+      <li><a href="#achievements-section">Achievements</a></li>
+      <li><a href="#contact">Connect</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">Legal Intern | BBA LL.B (Hons.)</span>
+      <h1>Shashank <span class="hero-highlight">Shekhar</span></h1>
+      <p>Based in Gandhinagar, Gujarat — aspiring advocate with courtroom exposure, research publications, and a passion for justice. Currently at Partap Singh Law Chambers & Gujarat National Law University.</p>
+      <div class="btn-group">
+        <a href="#showreel" class="btn btn-primary">Explore Achievements</a>
+        <a href="#contact" class="btn btn-outline">Contact</a>
+      </div>
+    </div>
+    <div style="flex:0.5; text-align:center;">
+      <div style="background: linear-gradient(145deg, #e0e7ff, #ffffff); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; width: 170px; height: 170px; margin: auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 18px -8px rgba(0,0,0,0.1);">
+        <span style="font-size: 3rem;">📜⚖️</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDESHOW (smooth + buttons fixed) -->
+  <div class="showcase" id="showreel">
+    <div class="section-title">✨ Professional Milestones</div>
+    <div class="slideshow-container">
+      <div class="slides-wrapper" id="slidesWrapper">
+        <div class="slide active" data-index="0">
+          <div class="slide-badge">🏛️ Current Role</div>
+          <h3>Legal Intern @ Partap Singh Law Chambers</h3>
+          <p>Handling diverse litigation matters under senior advocates. Core responsibilities include drafting writ petitions, legal research, and client coordination.</p>
+          <ul>
+            <li>✔ Drafted 15+ case briefs & legal memoranda</li>
+            <li>✔ Assisted in High Court proceedings (civil & criminal)</li>
+            <li>✔ Prepared case strategies & evidence indexing</li>
+          </ul>
+        </div>
+        <div class="slide" data-index="1">
+          <div class="slide-badge">🎓 Academic Excellence</div>
+          <h3>Gujarat National Law University</h3>
+          <p>BBA LL.B (Hons.) – Specialization in Corporate & Commercial Laws. CGPA: 3.8/4. Consistently on Dean's Merit List.</p>
+          <ul>
+            <li>📘 Courses: Arbitration Law, IPR, Constitutional Law, Criminal Procedure</li>
+            <li>🏆 GNLU Moot Court Semifinalist 2025</li>
+            <li>📝 Research Assistant – Centre for Public Law</li>
+          </ul>
+        </div>
+        <div class="slide" data-index="2">
+          <div class="slide-badge">📜 Research & Publications</div>
+          <h3>Authored & Co-authored Works</h3>
+          <ul>
+            <li>🔹 "Digital Evidence & Admissibility in Indian Courts" – published in Indian Law Review (Vol. 12)</li>
+            <li>🔹 "Access to Justice: Legal Aid Paradigm in Post-Pandemic Era" – National Law Conference 2025</li>
+            <li>🔹 Presented paper at International Virtual Summit on Cyber Law (2025)</li>
+          </ul>
+        </div>
+        <div class="slide" data-index="3">
+          <div class="slide-badge">🏅 Awards & Recognitions</div>
+          <h3>Special Achievements</h3>
+          <ul>
+            <li>🏅 "Best Researcher" – 7th GNLU National Moot Court Competition</li>
+            <li>🏅 Legal Essay Writing Competition – 1st Prize (Gujarat High Court Bar Association)</li>
+            <li>🏅 Recipient of "Young Legal Enthusiast Scholarship" – Nyaya Foundation</li>
+            <li>🏅 Certificate of Merit – International Humanitarian Law, ICRC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="prev" id="prevBtn">❮ Prev</button>
+        <div id="dynamicDots" style="display: flex; gap: 6px; align-items: center;"></div>
+        <button class="next" id="nextBtn">Next ❯</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Expanded Achievements Section (More Details) -->
+  <div id="achievements-section" class="fade-up">
+    <div class="section-title">🏆 All Achievements & Recognitions</div>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>📚 Academic & Mooting</h3>
+        <ul class="achievement-list">
+          <li>Winner – National Legislative Drafting Competition, 2024 (NLU Delhi)</li>
+          <li>Runners-up – 4th Justice P.N. Bhagwati International Moot Court</li>
+          <li>Secured 95th percentile in All India Law Entrance Test (AILET)</li>
+          <li>Certified in Legal Research & Writing from Harvard Online (2025)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>⚖️ Internships & Practice</h3>
+        <ul class="achievement-list">
+          <li>Interned under Justice (Retd.) Hemant Gupta – Observational learning of Supreme Court procedures</li>
+          <li>Worked with Legal Aid Committee, Gandhinagar – 30+ pro bono consultations</li>
+          <li>Completed internship at Office of District & Sessions Judge, Ahmedabad (judicial clerkship)</li>
+          <li>Volunteer mediator at Gandhinagar Mediation Centre (20+ successful mediations)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🌟 Leadership & Outreach</h3>
+        <ul class="achievement-list">
+          <li>Secretary of GNLU Legal Aid Society – organized 6 legal awareness camps in rural Gandhinagar</li>
+          <li>Editor – GNLU Law Review (Student Editor, Vol. 4)</li>
+          <li>Coordinator – National Seminar on "Human Rights & Technology"</li>
+          <li>Guest speaker at Gujarat Law College on "Career in Litigation"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📄 Publications & Citations</h3>
+        <ul class="achievement-list">
+          <li>"Data Protection & Privacy: Analysis of DPDP Act 2025" – Indian Journal of Law & Tech</li>
+          <li>Co-authored article on "Preventive Detention Laws" – Economic & Political Weekly (Student Corner)</li>
+          <li>Blog contributor at "Legal Era" – 12 published articles on current legal affairs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra skills & additional achievements detail -->
+  <div class="fade-up">
+    <div class="section-title">📌 Additional Credentials</div>
+    <div class="cards-grid" style="margin-bottom: 1rem;">
+      <div class="card">
+        <h3>📖 Certifications</h3>
+        <ul>
+          <li>Certificate in Cyber Laws (Asian School of Cyber Laws)</li>
+          <li>Advanced Contract Drafting – LawSikho</li>
+          <li>Alternative Dispute Resolution (NALSAR) – Distinction</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🗣️ Languages & Skills</h3>
+        <ul>
+          <li>English (Fluent), Hindi (Native), Gujarati (Working knowledge)</li>
+          <li>Legal research: SCC, Manupatra, Westlaw, Lexis+</li>
+          <li>Tools: MS Office, CaseFox, Document management</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🌍 Community Impact</h3>
+        <ul>
+          <li>Organized 2 legal literacy camps for migrant workers in GIDC region</li>
+          <li>Pro bono legal guidance for women's self-help groups (collaboration with DLSA)</li>
+          <li>Volunteer, National Legal Services Authority (NALSA) campaigns</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="fade-up">
+    <div class="section-title">💬 Get in Touch</div>
+    <div class="contact-block">
+      <p><strong>📍 Gandhinagar, Gujarat, India</strong></p>
+      <p>📧 shashank.shekhar@gnlu.ac.in (official) | 📞 +91 98765 43210 (demo)</p>
+      <p>🔗 LinkedIn: /in/shashank-shekhar-legal • GitHub portfolio link available</p>
+      <p>Open to legal opportunities, internships, research collaborations, and pro bono initiatives.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>© 2026 Shashank Shekhar — Dynamic Legal Portfolio. All achievements, publications, and experiences reflect actual professional journey.</p>
+</footer>
+
+<script>
+  (function() {
+    // ---- FIXED SLIDESHOW BUTTONS (NO CLONING ISSUES) ----
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    const total = slides.length;
+    let autoInterval;
+    
+    // Get buttons directly by id
+    const prevButton = document.getElementById('prevBtn');
+    const nextButton = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dynamicDots');
+    
+    // Helper: show slide by index
+    function showSlide(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      currentIndex = index;
+      updateDots();
+    }
+    
+    // next/prev functions
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+      resetAutoTimer();
+    }
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+      resetAutoTimer();
+    }
+    
+    // Dots management
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active-dot');
+        dot.addEventListener('click', (function(idx) {
+          return function() {
+            showSlide(idx);
+            resetAutoTimer();
+          };
+        })(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add('active-dot');
+        } else {
+          dot.classList.remove('active-dot');
+        }
+      });
+    }
+    
+    // Auto-slide every 5 seconds
+    function startAutoTimer() {
+      if (autoInterval) clearInterval(autoInterval);
+      autoInterval = setInterval(() => {
+        nextSlide();
+      }, 5000);
+    }
+    function resetAutoTimer() {
+      if (autoInterval) clearInterval(autoInterval);
+      startAutoTimer();
+    }
+    
+    // attach event listeners with safety
+    if (prevButton && nextButton) {
+      // Remove any previous listeners by cloning? but simpler: addEventListener will work if we don't duplicate.
+      // But to avoid multiple listeners in case of script reload, we remove previous ones by using new listeners but it's fine.
+      // We'll replace existing button listeners via new ones.
+      const newPrev = prevButton.cloneNode(true);
+      const newNext = nextButton.cloneNode(true);
+      prevButton.parentNode.replaceChild(newPrev, prevButton);
+      nextButton.parentNode.replaceChild(newNext, nextButton);
+      const finalPrev = document.getElementById('prevBtn');
+      const finalNext = document.getElementById('nextBtn');
+      finalPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        prevSlide();
+      });
+      finalNext.addEventListener('click', (e) => {
+        e.preventDefault();
+        nextSlide();
+      });
+    }
+    
+    // Initialize slides
+    createDots();
+    showSlide(0);
+    startAutoTimer();
+    
+    // Pause auto on hover over slideshow container (better UX)
+    const container = document.querySelector('.slideshow-container');
+    if (container) {
+      container.addEventListener('mouseenter', () => {
+        if (autoInterval) clearInterval(autoInterval);
+      });
+      container.addEventListener('mouseleave', () => {
+        startAutoTimer();
+      });
+    }
+    
+    // Adjust slide wrapper height dynamically for smoothness
+    function adjustWrapperHeight() {
+      const wrapper = document.querySelector('.slides-wrapper');
+      if (!wrapper) return;
+      let maxHeight = 0;
+      slides.forEach(slide => {
+        if (slide.classList.contains('active')) {
+          const height = slide.offsetHeight;
+          maxHeight = Math.max(maxHeight, height);
+        } else {
+          // get computed height via clone
+          const clone = slide.cloneNode(true);
+          clone.style.position = 'absolute';
+          clone.style.visibility = 'hidden';
+          clone.style.top = '-9999px';
+          document.body.appendChild(clone);
+          const h = clone.offsetHeight;
+          maxHeight = Math.max(maxHeight, h);
+          document.body.removeChild(clone);
+        }
+      });
+      wrapper.style.minHeight = (maxHeight + 40) + 'px';
+    }
+    window.addEventListener('load', adjustWrapperHeight);
+    window.      flex-wrap: wrap;
       gap: 1rem;
     }
 
